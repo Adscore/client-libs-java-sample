@@ -1,0 +1,48 @@
+plugins {
+    id 'java-library'
+    id "com.diffplug.gradle.spotless" version "3.27.0"
+    id 'maven-publish'
+    id 'signing'
+    id 'io.codearte.nexus-staging' version '0.21.2'
+}
+
+group 'com.adscore'
+version '1.0.2' //version of samples match with the version of the client-libs-java project
+
+sourceCompatibility = 1.8
+ 
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile 'com.adscore:adscore-client-libraries:1.0.3'
+    
+    testImplementation group: 'junit', name: 'junit', version: '4.12'
+    implementation 'com.github.seancfoley:ipaddress:5.2.1'
+}
+
+spotless {
+    java {
+        target fileTree(project.projectDir) {
+            include '**/*.java'
+            // exclude assertj generated classes
+            exclude 'build/generated-src/**/*.*'
+        }
+        importOrder 'java', 'javax', 'org', 'com', 'co', ''
+        removeUnusedImports()
+
+        googleJavaFormat()
+    }
+}
+
+java {
+    withJavadocJar()
+    withSourcesJar()
+}
+
+javadoc {
+    if(JavaVersion.current().isJava9Compatible()) {
+        options.addBooleanOption('html5', true)
+    }
+}
