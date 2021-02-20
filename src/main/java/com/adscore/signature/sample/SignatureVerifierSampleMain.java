@@ -35,8 +35,12 @@ public class SignatureVerifierSampleMain {
   static {
     samples = new HashMap<>();
 
+    // Register all samples
     ConstantArgumentsBaseSample baseSample = new ConstantArgumentsBaseSample();
     samples.put(baseSample.getName(), baseSample);
+
+    AllArgumentsSample allArgumentsSample = new AllArgumentsSample();
+    samples.put(allArgumentsSample.getName(), allArgumentsSample);
   }
 
   public static void main(String[] args) {

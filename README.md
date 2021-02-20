@@ -10,6 +10,9 @@ data.
 
 `ConstantArgumentsBaseSample.java` Does not take any parameters,
 it`s a pure example of usage of the lib API with hardcoded parameters values. See how to execute it in point 3rd.
+
+`AllArgumentsSample.java` To execute this example, appropriate parameters have to be provided via command-line.
+See how to execute it in point 3rd.
    
 <h4>3. Which classes are samples?</h4>
 All classes that implement Sample.java interface contain sample code.
@@ -33,6 +36,11 @@ Next execute one of follofing samples:
 <h5>ConstantArgumentsBaseSample execution:</h5>
 ```
 java -jar build/libs/client-libs-java-samples-1.0.4.jar base-sample
+```
+
+<h5>AllArgumentsSample execution:</h5>
+```
+java -jar build/libs/client-libs-java-samples-1.0.4.jar all-args-sample adscoreSignatureBase64Encoded "Mozilla/5.0" "customer" "adscoreKeyBase64Encoded" true 30 "92.96.235.182" "2001:8f8:1825:a600:950b:dae2:b606:640"
 ```
 
 Output of all samples is print  out to a standard output.
