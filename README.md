@@ -44,3 +44,9 @@ java -jar build/libs/client-libs-java-samples-1.0.4.jar all-args-sample adscoreS
 ```
 
 Output of all samples is print  out to a standard output.
+
+The meaning of all parameters are explained in the lib readme:
+https://github.com/Adscore/client-libs-java/blob/master/README.md
+
+or in JavaDocs:
+https://github.com/Adscore/client-libs-java/blob/master/src/main/java/com/adscore/signature/SignatureVerifier.java

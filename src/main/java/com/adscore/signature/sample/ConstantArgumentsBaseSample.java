@@ -40,7 +40,16 @@ class ConstantArgumentsBaseSample implements Sample {
         "customer",
         "adscoreKeyBase64Encoded",
         true,
+
+        // This IPs array may be sourced either from httpX ForwardForIpAddresses or remoteIpAddress
+        // header, both at once or from any other source.
+        // If there is any correct ip address provided, that matches with the signature, it is
+        // returned as result.ipAddress
         "92.96.235.182",
+        "92.96.235.183",
+        "92.96.235.184",
+        "153.96.235.232",
+        "153.96.235.233",
         "2001:8f8:1825:a600:950b:dae2:b606:640");
   }
 }
